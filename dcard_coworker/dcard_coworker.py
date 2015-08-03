@@ -34,7 +34,7 @@ def find_image_urls(article_content):
 @asyncio.coroutine
 def download_image(session, image_url, image_folder, image_name):
     logger.info('download@%s', image_url)
-    response = yield from session.get(image_url)
+    response = yield from session.request('get', image_url)
     if response.status != 200:
         logger.error('Download image failed: %s', image_url)
         return -1
@@ -49,7 +49,7 @@ def download_image(session, image_url, image_folder, image_name):
 @asyncio.coroutine
 def get_articles_of_page(session, forum_name, page_index):
     url = 'https://www.dcard.tw/api/forum/{0}/{1}/'.format(forum_name, page_index)
-    response = yield from session.get(url)
+    response = yield from session.request('get', url)
     if response.status != 200:
         logger.error('Get article list failed: %s', url)
         session.close()
@@ -63,7 +63,7 @@ def get_articles_of_page(session, forum_name, page_index):
 @asyncio.coroutine
 def get_article(session, article_id):
     url = 'https://www.dcard.tw/api/post/all/{0}'.format(article_id)
-    response = yield from session.get(url)
+    response = yield from session.request('get', url)
     if response.status != 200:
         logger.error('Get article content failed: %s', url)
         session.close()
