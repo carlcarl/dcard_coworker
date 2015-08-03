@@ -40,8 +40,9 @@ Example
 
 Todo
 ----
-* Add example
+* Add pypi setup
 * Add documentation
+  
 
 License
 -------
