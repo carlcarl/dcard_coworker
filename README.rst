@@ -1,5 +1,5 @@
 dcard_coworker
-============
+==============
 
 Dcard crawler using asyncio(coroutine)
 
@@ -12,6 +12,31 @@ Feature
 Packcage Dependency
 -------------------
 * aiohttp
+
+
+Example
+-------
+
+::
+
+    #!/usr/bin/env python
+
+    import dcard_coworker
+    import asyncio
+    import aiohttp
+
+    @asyncio.coroutine
+    def get_funny_articles():
+        session = aiohttp.ClientSession()
+        result = yield from dcard_coworker.get_articles_of_page(session, 'funny', 1)
+        print(result)
+
+    def main():
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(asyncio.wait([get_funny_articles()]))
+
+    if __name__ == '__main__':
+        main()
 
 Todo
 ----
