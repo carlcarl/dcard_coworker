@@ -21,14 +21,17 @@ Example
 
     #!/usr/bin/env python
 
-    import dcard_coworker
     import asyncio
+
     import aiohttp
+    import dcard_coworker
 
     @asyncio.coroutine
     def get_funny_articles():
         session = aiohttp.ClientSession()
-        result = yield from dcard_coworker.get_articles_of_page(session, 'funny', 1)
+        forum_name = 'funny'
+        page_index = 1
+        result = yield from dcard_coworker.get_articles_of_page(session, forum_name, page_index)
         print(result)
 
     def main():
@@ -37,6 +40,7 @@ Example
 
     if __name__ == '__main__':
         main()
+
 
 Todo
 ----
