@@ -15,6 +15,19 @@ Dependencies
 * aiohttp
 
 
+Installation
+------------
+::
+
+	python setup.py install
+
+or 
+
+::
+
+    pip install dcard_coworker
+
+
 Example
 -------
 
