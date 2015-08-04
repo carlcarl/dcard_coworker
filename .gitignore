@@ -4,3 +4,4 @@ __pycache__/
 build/
 dist/
 dcard_coworker.egg-info/
+_build/
