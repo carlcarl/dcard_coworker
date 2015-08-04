@@ -43,8 +43,8 @@ Example
 
 Todo
 ----
-* Add pypi setup
-* Add documentation
+* pypi upload
+* Add more examples
   
 
 Authors and License
