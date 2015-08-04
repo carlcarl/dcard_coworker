@@ -24,10 +24,10 @@ def get_direct_image_url(image_url):
     return image_url
 
 
-def find_image_urls(article_content):
+def find_image_urls(article_json):
     # https://stackoverflow.com/questions/169625/regex-to-check-if-valid-url-that-ends-in-jpg-png-or-gif
     # https://stackoverflow.com/questions/6883049/regex-to-find-urls-in-string-in-python
-    image_urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+\.(?:jpg|gif|png)|http://imgur.com/(?:[a-zA-Z]|[0-9])+', article_content['version'][0]['content'])
+    image_urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+\.(?:jpg|gif|png)|http://imgur.com/(?:[a-zA-Z]|[0-9])+', article_json['version'][0]['content'])
     return image_urls
 
 
@@ -54,10 +54,10 @@ def get_articles_of_page(session, forum_name, page_index):
         logger.error('Get article list failed: %s', url)
         session.close()
         return None
-    articles = yield from response.json()
+    articles_json = yield from response.json()
     yield from response.release()
     session.close()
-    return articles
+    return articles_json
 
 
 @asyncio.coroutine
@@ -68,6 +68,6 @@ def get_article(session, article_id):
         logger.error('Get article content failed: %s', url)
         session.close()
         return None
-    article_content = yield from response.json()
+    article_json = yield from response.json()
     yield from response.release()
-    return article_content
+    return article_json
