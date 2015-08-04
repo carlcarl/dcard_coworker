@@ -1,1 +1,4 @@
-aiohttp==0.16.5
+aiohttp
+
+# Doc
+sphinx
