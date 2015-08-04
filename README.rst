@@ -43,7 +43,6 @@ Example
 
 Todo
 ----
-* pypi upload
 * Add more examples
   
 

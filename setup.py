@@ -19,7 +19,7 @@ def get_release():
 
 setup(
     name='dcard_coworker',
-    description='',
+    description='Dcard crawler using asyncio(coroutine)',
     long_description=open('README.rst').read(),
     version=get_release(),
     author='carlcarl',
