@@ -56,6 +56,7 @@ Example
 
 Todo
 ----
+* Add testings
 * Add more examples
   
 
