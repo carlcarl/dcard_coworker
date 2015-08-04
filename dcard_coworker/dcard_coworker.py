@@ -53,7 +53,7 @@ def get_articles_of_page(session, forum_name, page_index):
     if response.status != 200:
         logger.error('Get article list failed: %s', url)
         session.close()
-        return None
+        return []
     articles_json = yield from response.json()
     yield from response.release()
     session.close()
@@ -67,7 +67,7 @@ def get_article(session, article_id):
     if response.status != 200:
         logger.error('Get article content failed: %s', url)
         session.close()
-        return None
+        return {}
     article_json = yield from response.json()
     yield from response.release()
     return article_json
