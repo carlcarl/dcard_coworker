@@ -34,16 +34,24 @@ def find_image_urls(article_json):
 @asyncio.coroutine
 def download_image(session, image_url, image_folder, image_name):
     logger.info('download@%s', image_url)
+    result = {
+        'func_name': 'download_image',
+        'image_url': image_url,
+        'image_folder': image_folder,
+        'image_name': image_name,
+        'result': 0,
+    }
     response = yield from session.request('get', image_url)
     if response.status != 200:
         logger.error('Download image failed: %s', image_url)
-        return -1
+        result['result'] = -1
+        return result
     image_path = os.path.join(image_folder, image_name)
     image = yield from response.read()
     with open(image_path, 'wb') as f:
         f.write(image)
     yield from response.release()
-    return 0
+    return result
 
 
 @asyncio.coroutine

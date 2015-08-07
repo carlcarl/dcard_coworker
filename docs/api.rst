@@ -61,6 +61,15 @@ Image
 
     Download image to the ``image_folder`` with the ``image_name``
 
+    Example of return:
+    {
+        'func_name': 'download_image',
+        'result': 0 # 0 success, -1 error,
+        'image_url': 'http://xxx.png',
+        'image_folder': '/tmp',
+        'image_name': 'yyy.png',
+    }
+
     :param aiohttp.client.ClientSession session: HTTP(s) connect session
 
     :param string image_url: the image url you want download
@@ -69,5 +78,5 @@ Image
 
     :param string image_name: the name of the image you want
 
-    :returns: the result of the download, 0 means success, -1 means error
-    :rtype: int
+    :returns: a dict include result, function name and arguments of download_image
+    :rtype: dict
