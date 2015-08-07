@@ -61,14 +61,17 @@ Image
 
     Download image to the ``image_folder`` with the ``image_name``
 
-    Example of return:
-    {
-        'func_name': 'download_image',
-        'result': 0 # 0 success, -1 error,
-        'image_url': 'http://xxx.png',
-        'image_folder': '/tmp',
-        'image_name': 'yyy.png',
-    }
+    Example of returns:
+
+    ::
+
+        {
+            'func_name': 'download_image',
+            'result': 0 # 0 success, -1 error,
+            'image_url': 'http://xxx.png',
+            'image_folder': '/tmp',
+            'image_name': 'yyy.png',
+        }
 
     :param aiohttp.client.ClientSession session: HTTP(s) connect session
 
