@@ -48,7 +48,7 @@ Example
 
     def main():
         loop = asyncio.get_event_loop()
-        loop.run_until_complete(asyncio.wait([get_funny_articles()]))
+        loop.run_until_complete(get_funny_articles())
 
     if __name__ == '__main__':
         main()
