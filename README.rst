@@ -1,3 +1,8 @@
+Deprecated! 
+===========
+
+Use `aiodcard <https://github.com/carlcarl/aiodcard>`_ instead!!
+
 dcard_coworker
 ==============
 
