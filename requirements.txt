@@ -2,3 +2,8 @@ aiohttp
 
 # Doc
 sphinx
+
+# Testing
+pytest
+pytest-sugar
+pytest-asyncio

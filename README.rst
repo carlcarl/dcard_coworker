@@ -56,8 +56,7 @@ Example
 
 Todo
 ----
-* Add testings
-* Add more examples
+* test all functions
   
 
 Authors and License

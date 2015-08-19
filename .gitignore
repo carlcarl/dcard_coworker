@@ -5,3 +5,4 @@ build/
 dist/
 dcard_coworker.egg-info/
 _build/
+.coverage
